@@ -1131,13 +1131,13 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION)
+   ADVANCED MOBILE & RESPONSIVE DESIGN SYSTEM
    ========================================================================== */
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
+    gap: 36px;
   }
 
   .status-pill {
@@ -1147,16 +1147,27 @@ body {
 
   .amazon-buy-card {
     text-align: left;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .countdown-box {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .author-card-flex {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 30px 20px;
+    padding: 30px 24px;
+    gap: 28px;
   }
 
   .author-photo-img {
     margin: 0 auto;
+    max-width: 220px;
   }
 
   .author-badges {
@@ -1164,30 +1175,84 @@ body {
   }
 
   .endorsements-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .movement-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
   }
 }
 
-@media (max-width: 600px) {
+/* Tablet & Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 75px; /* Prevent sticky bottom bar from covering content */
+  }
+
+  .top-ticker {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .header-inner {
+    padding: 10px 16px;
+  }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+
+  .brand-text h1 {
+    font-size: 0.98rem;
+  }
+
+  .brand-text span {
+    font-size: 0.65rem;
+  }
+
+  .header-ctas .status-pill {
+    display: none; /* Hide long pill in mobile header to save space */
+  }
+
   .header-ctas .btn {
-    display: none;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .hero-coming-soon {
+    padding: 24px 0 50px;
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .hero-tagline {
     font-size: 1.05rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  /* 3D Book Sizing for Tablets & Phones */
+  .book-interactive-stage {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 20px;
   }
 
   .book-3d-scene {
-    width: 250px;
+    width: 260px;
     height: 380px;
+    margin: 0 auto;
   }
 
   .book-object {
@@ -1195,16 +1260,245 @@ body {
     height: 360px;
   }
 
+  .bestseller-seal {
+    width: 80px;
+    height: 80px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .seal-small { font-size: 0.58rem; }
+  .seal-big { font-size: 1.15rem; }
+
+  /* Mobile Swipeable Endorsements Carousel */
+  .endorsements-swipe-hint {
+    display: flex !important;
+  }
+
+  .endorsements-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 4px 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .endorsements-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .endorsement-bubble {
+    flex: 0 0 88%;
+    scroll-snap-align: center;
+    padding: 24px 20px;
+  }
+
+  /* Movement strip compact numbers */
+  .movement-strip {
+    padding: 28px 0;
+  }
+
+  .movement-card {
+    padding: 14px 8px;
+  }
+
+  .movement-num {
+    font-size: 1.6rem;
+  }
+
+  .movement-desc {
+    font-size: 0.72rem;
+  }
+
+  /* Mobile Sticky Bottom Bar */
   .mobile-sticky-buy-bar {
     display: block;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Small Smartphone Screens (<= 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* 3D Book compact scaling for smaller phones */
+  .book-3d-scene {
+    width: 220px;
+    height: 330px;
+  }
+
+  .book-object {
+    width: 210px;
+    height: 310px;
+  }
+
+  .book-face-spine {
+    width: 26px;
+    left: -13px;
+    font-size: 0.6rem;
+  }
+
+  .book-face-pages {
+    width: 24px;
+    right: -12px;
+  }
+
+  .book-controls-bar {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .book-control-btn {
+    padding: 5px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* Edition Selector in Buy Box: Dual full-width columns */
+  .edition-selector-pills {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .edition-pill {
+    padding: 8px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .edition-name {
+    font-size: 0.7rem;
+  }
+
+  .edition-price {
+    font-size: 1.15rem;
+  }
+
+  .buy-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .buy-card-actions {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
   .buy-card-actions .btn {
     width: 100%;
+    padding: 14px 18px;
+  }
+
+  .stock-indicator {
+    justify-content: center;
+    width: 100%;
+    font-size: 0.78rem;
+  }
+
+  /* Countdown box */
+  .countdown-digits {
+    gap: 6px;
+  }
+
+  .digit-unit {
+    padding: 8px 2px;
+  }
+
+  .digit-num {
+    font-size: 1.25rem;
+  }
+
+  .digit-name {
+    font-size: 0.6rem;
+  }
+
+  .notify-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .notify-input {
+    width: 100%;
+  }
+
+  .notify-form .btn {
+    width: 100%;
+  }
+
+  /* Movement strip on small mobile */
+  .movement-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .movement-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    text-align: left;
+  }
+
+  .movement-num {
+    font-size: 1.4rem;
+  }
+
+  .movement-desc {
+    margin-top: 0;
+    font-size: 0.78rem;
+  }
+
+  /* Author Section */
+  .author-card-flex {
+    padding: 24px 16px;
+  }
+
+  .author-info-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .author-title-tag {
+    font-size: 0.9rem;
+  }
+
+  .author-badges {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .author-badge-item {
+    font-size: 0.76rem;
+    padding: 5px 10px;
+  }
+
+  /* Modal */
+  .modal-content-card {
+    padding: 24px 18px;
+    max-height: 90vh;
+  }
+}
+
+/* Extra Small Screens (iPhone SE, Galaxy Fold 320px) */
+@media (max-width: 350px) {
+  .book-3d-scene {
+    width: 190px;
+    height: 290px;
+  }
+
+  .book-object {
+    width: 180px;
+    height: 270px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
   }
 }
