@@ -271,15 +271,35 @@
             <span class="signed-price-label">Special Gift Edition</span>
           </div>
 
-          <a href="https://wa.me/919072004596?text=Hello%20Dr.%20George%20V%20Antony%2C%20I%20would%20like%20to%20order%20the%20Author%20Hand-Signed%20Special%20Gift%20Edition%20of%20Why%20Mentor%20Matters%20(%E2%82%B9999)." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg" style="width: 100%; justify-content: center;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
-            </svg>
-            <span>ORDER SIGNED COPY VIA WHATSAPP (₹999)</span>
-          </a>
+          <!-- Quick WhatsApp Order Form -->
+          <form class="signed-order-form" onsubmit="handleSignedOrder(event)">
+            <div class="signed-form-group">
+              <label for="signedName" class="signed-form-label">Full Name *</label>
+              <input type="text" id="signedName" class="signed-input" placeholder="Enter your full name" required>
+            </div>
+            <div class="signed-form-group">
+              <label for="signedAddress" class="signed-form-label">Delivery Address & PIN Code *</label>
+              <textarea id="signedAddress" class="signed-input signed-textarea" rows="2" placeholder="House/Flat, Street, City, State, PIN code" required></textarea>
+            </div>
+            <div class="signed-form-group">
+              <label for="signedPhone" class="signed-form-label">Phone / WhatsApp Number *</label>
+              <input type="tel" id="signedPhone" class="signed-input" placeholder="e.g. 9072004596" required>
+            </div>
+            <div class="signed-form-group">
+              <label for="signedNote" class="signed-form-label">Custom Inscription Note (Optional)</label>
+              <input type="text" id="signedNote" class="signed-input" placeholder="Name to inscribe or special message">
+            </div>
+
+            <button type="submit" class="btn btn-whatsapp btn-lg" style="width: 100%; margin-top: 4px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.52 11.53c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+              </svg>
+              <span>SEND ORDER TO WHATSAPP (₹999)</span>
+            </button>
+          </form>
 
           <div class="whatsapp-direct-note">
-            <span>Direct Author Team WhatsApp: <strong>+91 90720 04596</strong></span>
+            <span>Direct WhatsApp: <a href="https://wa.me/919072004596?text=Hello%20Dr.%20George%20V%20Antony%2C%0A%0AI%20would%20like%20to%20order%20the%20Author%20Hand-Signed%20Special%20Gift%20Edition%20of%20Why%20Mentor%20Matters%20(%E2%82%B9999).%0A%0A*DELIVERY%20DETAILS%3A*%0A%E2%80%A2%20Full%20Name%3A%20%0A%E2%80%A2%20Delivery%20Address%3A%20%0A%E2%80%A2%20Phone%20Number%3A%20%0A%E2%80%A2%20Dedication%20Note%20(Optional)%3A%20" target="_blank" rel="noopener" style="color: #25D366; font-weight: 700; text-decoration: underline;">+91 90720 04596</a></span>
           </div>
         </div>
       </div>
@@ -309,14 +329,10 @@
             <span class="author-badge-item">★ Catalyst for MSME Growth & Resilience</span>
           </div>
 
-          <div style="margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <div class="author-actions-wrap">
             <a href="https://www.amazon.in/Matters-must-read-handbook-Entrepreneurs-Leadership/dp/9358478047" target="_blank" rel="noopener" class="btn btn-gold btn-sm">ORDER ON AMAZON (From ₹495) →</a>
-            <a href="https://wa.me/919072004596?text=Hello%20Dr.%20George%20V%20Antony%2C%20I%20would%20like%20to%20order%20the%20Author%20Hand-Signed%20Special%20Gift%20Edition%20of%20Why%20Mentor%20Matters%20(%E2%82%B9999)." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">SIGNED COPY (₹999)</a>
+            <a href="#signed-copy" class="btn btn-whatsapp btn-sm">SIGNED COPY (₹999)</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
         </div>
       </div>
     </div>
@@ -456,7 +472,7 @@
         </div>
       </div>
       <div style="display: flex; gap: 8px; align-items: center;">
-        <a href="https://wa.me/919072004596?text=Hello%20Dr.%20George%20V%20Antony%2C%20I%20would%20like%20to%20order%20the%20Author%20Hand-Signed%20Special%20Gift%20Edition%20of%20Why%20Mentor%20Matters%20(%E2%82%B9999)." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm mobile-bar-btn" title="Order Signed Copy on WhatsApp">
+        <a href="#signed-copy" class="btn btn-whatsapp btn-sm mobile-bar-btn" title="Order Signed Copy">
           <span>Signed ₹999</span>
         </a>
         <a href="https://www.amazon.in/Matters-must-read-handbook-Entrepreneurs-Leadership/dp/9358478047" target="_blank" rel="noopener" class="btn btn-amazon btn-sm mobile-bar-btn">
@@ -489,7 +505,7 @@
 
       <ul class="footer-links">
         <li><a href="https://www.amazon.in/Matters-must-read-handbook-Entrepreneurs-Leadership/dp/9358478047" target="_blank" rel="noopener">Buy on Amazon</a></li>
-        <li><a href="https://wa.me/919072004596?text=Hello%20Dr.%20George%20V%20Antony%2C%20I%20would%20like%20to%20order%20the%20Author%20Hand-Signed%20Special%20Gift%20Edition%20of%20Why%20Mentor%20Matters%20(%E2%82%B9999)." target="_blank" rel="noopener" style="color: #34D399; font-weight: 700;">Signed Copy (WhatsApp 9072004596)</a></li>
+        <li><a href="#signed-copy" style="color: #34D399; font-weight: 700;">Signed Copy (WhatsApp 9072004596)</a></li>
         <li><a href="#excerptModal" class="open-excerpt-btn">Look Inside</a></li>
         <li><a href="mailto:whymentormatters@gmail.com">whymentormatters@gmail.com</a></li>
       </ul>

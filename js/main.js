@@ -340,3 +340,27 @@ function initExcerptModal() {
     }
   });
 }
+
+/* --------------------------------------------------------------------------
+   6. Author Hand-Signed Copy WhatsApp Order Handler
+   -------------------------------------------------------------------------- */
+window.handleSignedOrder = function(e) {
+  if (e) e.preventDefault();
+  const nameInput = document.getElementById('signedName');
+  const addressInput = document.getElementById('signedAddress');
+  const phoneInput = document.getElementById('signedPhone');
+  const noteInput = document.getElementById('signedNote');
+
+  const name = (nameInput?.value || '').trim();
+  const address = (addressInput?.value || '').trim();
+  const phone = (phoneInput?.value || '').trim();
+  const note = (noteInput?.value || '').trim();
+
+  let text = `Hello Dr. George V Antony,\n\nI would like to order the Author Hand-Signed Special Gift Edition of *Why Mentor Matters* (₹999).\n\n*DELIVERY DETAILS:*\n• *Full Name:* ${name || '[Please Enter Name]'}\n• *Delivery Address:* ${address || '[Please Enter Full Address & Pincode]'}\n• *Phone Number:* ${phone || '[Please Enter Phone Number]'}`;
+  if (note) {
+    text += `\n• *Dedication Note:* ${note}`;
+  }
+
+  const url = `https://wa.me/919072004596?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+};
