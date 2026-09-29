@@ -356,7 +356,7 @@ window.handleSignedOrder = function(e) {
   const phone = (phoneInput?.value || '').trim();
   const note = (noteInput?.value || '').trim();
 
-  let text = `Hello Dr. George V Antony,\n\nI would like to order the Author Hand-Signed Special Gift Edition of *Why Mentor Matters* (₹999).\n\n*DELIVERY DETAILS:*\n• *Full Name:* ${name || '[Please Enter Name]'}\n• *Delivery Address:* ${address || '[Please Enter Full Address & Pincode]'}\n• *Phone Number:* ${phone || '[Please Enter Phone Number]'}`;
+  let text = `Hello Dr. George V Antony,\n\nI would like to order the Author Hand-Signed Copy of *Why Mentor Matters* (₹999).\n\n*DELIVERY DETAILS:*\n• *Full Name:* ${name || '[Please Enter Name]'}\n• *Delivery Address:* ${address || '[Please Enter Full Address & Pincode]'}\n• *Phone Number:* ${phone || '[Please Enter Phone Number]'}`;
   if (note) {
     text += `\n• *Dedication Note:* ${note}`;
   }
